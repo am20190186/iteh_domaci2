@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posetioci', function (Blueprint $table) {
-            $table->id();
-            $table->string('imePrezime',30);
-            $table->integer('godine');
-            $table->timestamps();
+        Schema::table('predstave', function (Blueprint $table) {
+            $table->renameColumn('brojSale', 'sala');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posetioci');
+        Schema::table('predstave', function (Blueprint $table) {
+            $table->renameColumn('sala', 'brojSale');
+        });
     }
 };
