@@ -9,6 +9,14 @@ class Posetilac extends Model
 {
     use HasFactory;
 
+    protected $table = 'posetioci';
+
+    protected $fillable = [
+        'imePrezime',
+        'godine',
+        'kontakt',
+    ];
+
     public function karte()
     {
         return $this->hasMany(Karta::class);

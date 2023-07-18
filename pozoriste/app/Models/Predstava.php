@@ -9,6 +9,16 @@ class Predstava extends Model
 {
     use HasFactory;
 
+    protected $table = 'predstave';
+
+    protected $fillable = [
+
+        'naziv',
+        'zanr',
+        'brojSale',
+        'trajanje',
+    ];
+
     public function karte()
     {
         return $this->hasMany(Karta::class);
