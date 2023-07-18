@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('predstave', function (Blueprint $table) {
             $table->id();
-            $table->string('naziv',20);
+            $table->string('naziv',50);
             $table->string('zanr',30);
             $table->integer('brojSale');
             $table->integer('trajanje');

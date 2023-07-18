@@ -19,8 +19,8 @@ class PredstavaFactory extends Factory
         return [
             'naziv' => $this->faker->sentence($nbWords = 4, $variableNbWords = true),
             'zanr' => $this->faker->randomElement($array = array('Komedija', 'Drama', 'Mjuzikal','Misterija', 'Romanticna')),
-            'brojSale' => $this->faker->numberBetween($min = 1, $max = 10),
-            'trajanje' => $this->$this->faker->numberBetween($min = 60, $max = 120),
+            'sala' => $this->faker->numberBetween($min = 1, $max = 10),
+            'trajanje' => $this->faker->numberBetween($min = 60, $max = 120),
         ];
     }
 }

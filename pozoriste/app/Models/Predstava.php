@@ -15,7 +15,7 @@ class Predstava extends Model
 
         'naziv',
         'zanr',
-        'brojSale',
+        'sala',
         'trajanje',
     ];
 
