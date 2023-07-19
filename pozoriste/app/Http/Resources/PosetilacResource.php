@@ -12,13 +12,14 @@ class PosetilacResource extends JsonResource
      *
      * @return array<string, mixed>
      */
-    public function toArray(Request $request): array
+    public function toArray(Request $request)
     {
         return [
             'ID -> ' => $this->resource->id,
-            'Ime prezime posetioca -> ' => $this->resource->imePrezime,
-            'Broj godina posetioca -> ' => $this->resource->godine,
-            'Kontakt telefon posetioca-> ' => $this->resource->kontakt
+            'Ime prezime gledaoca -> ' => $this->resource->imePrezime,
+            'Broj godina gledaoca -> ' => $this->resource->godine,
+            'Broj telefona gledaoca-> ' => $this->resource->kontakt
         ];
+
     }
 }

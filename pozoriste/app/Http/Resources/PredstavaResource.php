@@ -10,15 +10,17 @@ class PredstavaResource extends JsonResource
     /**
      * Transform the resource into an array.
      *
-     * @return array<string, mixed>
+     * @param  \Illuminate\Http\Request  $request
+     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
-    public function toArray(Request $request): array
+    
+    public function toArray( $request)
     {
         return [
             'ID -> ' => $this->resource->id,
             'Naziv predstave -> ' => $this->resource->naziv,
             'Zanr predstave -> ' => $this->resource->zanr,
-            'Broj sale -> ' => $this->resource->brojSale,
+            'Broj sale -> ' => $this->resource->sala,
             'Trajanje u minutima -> '=> $this->resource->trajanje,
         ];
     }
