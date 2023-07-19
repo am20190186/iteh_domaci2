@@ -20,12 +20,12 @@ class PredstavaController extends Controller
         return new PredstavaResource($predstava);
     }
 
-    public function update(Request $request,  $predstava)
+    public function update(Request $request, Predstava $predstava)
     {
         $validator = Validator::make($request->all(), [
             'naziv' => 'required',
             'zanr' => 'required',
-            'brojSale' => 'required',
+            'sala' => 'required',
             'trajanje' => 'required',
         ]);
 
@@ -35,7 +35,7 @@ class PredstavaController extends Controller
 
         $predstava->naziv = $request->naziv;
         $predstava->zanr = $request->zanr;
-        $predstava->brojSale = $request->brojSale;
+        $predstava->sala = $request->sala;
         $predstava->trajanje = $request->trajanje;
 
         $predstava->save();
@@ -43,7 +43,7 @@ class PredstavaController extends Controller
         return response()->json(['Uspešno izmenjena predstava!', new PredstavaResource($predstava)]);
     }
 
-    public function destroy( $predstava)
+    public function destroy(Predstava $predstava)
     {
         $predstava->delete();
         return response()->json('Uspešno obrisana predstava!');
