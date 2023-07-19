@@ -33,6 +33,7 @@ Route::get('posetilac/{posetilac}', [PosetilacController::class, 'show']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::put('predstava/{predstava}', [PredstavaController::class, 'update']);
     Route::delete('predstava/{predstava}', [PredstavaController::class, 'destroy']);
+    Route::post('createPosetilac', [PosetilacController::class, 'create']);
     Route::post('logout', [AuthController::class, 'logout']);
 });
 
